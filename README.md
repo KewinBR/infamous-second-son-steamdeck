@@ -28,6 +28,71 @@ the installer only uses the `.pkg` files you already have.
 - Automatic updates: before starting the game, the shortcut checks for a new version and updates by itself. Saves,
   shaders and settings are never deleted.
 
+## Made for the Steam Deck
+
+Everything that changed from the PS4 game to make it feel like a Steam Deck game.
+
+### Spray minigame with the Deck
+
+On the PS4, graffiti is done by turning the controller on its side and shaking it, with the motion sensor. On the
+Deck it works with the Deck's gyro, and the game's instructions were redrawn with the Steam Deck instead of the PS4
+controller: Delsin shaking the Deck and the hands turning the Deck on its side.
+
+<p align="center">
+<img src="docs/img/deck/spray-chacoalhar.gif" width="260" alt="Shake: Delsin shaking the Steam Deck">
+<img src="docs/img/deck/spray-virar.jpg" width="260" alt="Hold sideways: the hands turning the Steam Deck">
+</p>
+<p align="center"><img src="docs/img/deck/spray-no-jogo.jpg" width="640" alt="The spray minigame in the game, with the new icon"></p>
+
+Without the gyro (or if you prefer), the port menu has a guide to do the graffiti with the sticks.
+
+### Controls screen with the Deck
+
+In the game's Options, the drawing of the PS4 controller became the Steam Deck, with the back buttons (L4, L5, R4,
+R5) and what each one does.
+
+| PS4 | Steam Deck |
+|---|---|
+| <img src="docs/img/deck/controles-antes.jpg" width="420" alt="Controls with the DualShock 4"> | <img src="docs/img/deck/controles-depois.jpg" width="420" alt="Controls with the Steam Deck"> |
+
+### Deck buttons in the game
+
+The game's button icons (hints, menus, tutorials) replaced with the Deck's: A, B, X, Y, Menu and View instead of
+cross, circle, square, triangle, Options and touchpad, in the same style as the original icons.
+
+<p align="center"><img src="docs/img/deck/botoes-deck.jpg" width="640" alt="Steam Deck button icons"></p>
+
+Not in the installer yet: the generator needs an image library SteamOS does not have, and it is being adapted to
+run on the Deck itself, from your game's files.
+
+### Startup screen
+
+While the shaders are prepared, a screen in the game's style, with the art of Delsin with the Steam Deck, the
+Steamdeck Version logo painted like spray, the progress bar and the time left.
+
+<p align="center"><img src="docs/img/deck/tela-de-abertura.jpg" width="640" alt="Startup screen"></p>
+
+### Skip videos (experimental)
+
+Turned on in Extras in the port menu: during a video, holding the menu button for 1 s skips the scene (a quick tap
+still pauses). The screen stays covered with the Delsin art until the game is back, and the scene's audio is muted.
+
+<p align="center">
+<img src="docs/img/deck/pular-video-aviso.jpg" width="420" alt="Skip prompt with the menu button">
+<img src="docs/img/deck/pular-video-cobertura.jpg" width="420" alt="Skipping the scene">
+</p>
+
+### And more
+
+- **Gyro:** Steam turns off the Deck controller's gyro and hands the game a virtual controller; the port reads the
+  Deck's controller directly and turns the gyro on by itself.
+- **Trackpads:** the left and right ones become the two halves of the PS4 touchpad (a firm press is a click).
+- **Steam button:** freezes the game while the Steam menu or the quick access menu is open, like the PS button.
+- **Port menu on the View button**, with graphics, performance, controls and Extras tabs, in the game's style.
+- **Save and load screens** redone in the game's style, with the Deck's A and B letters.
+- **16:10:** the Deck's screen resolution (1280x800) and videos cropped to 16:10.
+- **Steam library art:** cover, banner, background, logo and icon of the Steamdeck Version.
+
 ## Requirements
 
 - Steam Deck (tested on SteamOS 3.8).

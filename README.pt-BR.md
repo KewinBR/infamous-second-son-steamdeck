@@ -27,6 +27,71 @@ baixado: o instalador só usa os `.pkg` que você já tem.
 - Atualização automática: antes de abrir o jogo, o atalho confere se saiu versão nova e atualiza sozinho. Saves,
   shaders e opções nunca são apagados.
 
+## Feito para o Steam Deck
+
+Tudo o que mudou em relação ao jogo de PS4 para ele parecer um jogo de Steam Deck.
+
+### Minigame do spray com o Deck
+
+No PS4, o grafite se faz virando o controle de lado e chacoalhando, pelo sensor de movimento. No Deck isso funciona
+com o giroscópio dele, e as instruções do jogo foram redesenhadas com o Steam Deck no lugar do controle do PS4: o
+Delsin chacoalhando o Deck e as mãos virando o Deck de lado.
+
+<p align="center">
+<img src="docs/img/deck/spray-chacoalhar.gif" width="260" alt="Agite: o Delsin chacoalhando o Steam Deck">
+<img src="docs/img/deck/spray-virar.jpg" width="260" alt="Segure de lado: as mãos virando o Steam Deck">
+</p>
+<p align="center"><img src="docs/img/deck/spray-no-jogo.jpg" width="640" alt="O minigame do spray no jogo, com o ícone novo"></p>
+
+Sem giroscópio (ou para quem prefere), o menu do port tem um guia de como fazer o grafite com os analógicos.
+
+### Tela de controles com o Deck
+
+Nas Opções do jogo, o desenho do controle do PS4 virou o Steam Deck, com os botões de trás (L4, L5, R4, R5) e o que
+cada um faz.
+
+| PS4 | Steam Deck |
+|---|---|
+| <img src="docs/img/deck/controles-antes.jpg" width="420" alt="Controles com o DualShock 4"> | <img src="docs/img/deck/controles-depois.jpg" width="420" alt="Controles com o Steam Deck"> |
+
+### Botões do Deck no jogo
+
+Os ícones de botão do jogo (dicas, menus, tutoriais) trocados pelos do Deck: A, B, X, Y, Menu e View no lugar de
+cruz, círculo, quadrado, triângulo, Options e touchpad, no mesmo estilo dos ícones originais.
+
+<p align="center"><img src="docs/img/deck/botoes-deck.jpg" width="640" alt="Ícones de botão do Steam Deck"></p>
+
+Ainda não entram pelo instalador: o gerador precisa de uma biblioteca de imagens que o SteamOS não tem e está sendo
+adaptado para rodar no próprio Deck, a partir dos arquivos do seu jogo.
+
+### Tela de abertura
+
+Enquanto os shaders são preparados, uma tela no estilo do jogo, com a arte do Delsin com o Steam Deck, o logo
+Steamdeck Version pintado como spray, a barra de progresso e o tempo restante.
+
+<p align="center"><img src="docs/img/deck/tela-de-abertura.jpg" width="640" alt="Tela de abertura"></p>
+
+### Pular vídeos (experimental)
+
+Ligado em Extras no menu do port: durante um vídeo, segurar o botão de menu por 1 s pula a cena (um toque rápido
+continua pausando). A tela fica coberta com a arte do Delsin até o jogo voltar, e o áudio da cena fica mudo.
+
+<p align="center">
+<img src="docs/img/deck/pular-video-aviso.jpg" width="420" alt="Aviso Pular com o botão de menu">
+<img src="docs/img/deck/pular-video-cobertura.jpg" width="420" alt="Pulando a cena">
+</p>
+
+### E mais
+
+- **Giroscópio:** a Steam desliga o giroscópio do controle do Deck e entrega um controle virtual ao jogo; o port lê o
+  controle do Deck direto e liga o giroscópio sozinho.
+- **Trackpads:** o esquerdo e o direito viram as duas metades do touchpad do PS4 (clique firme = clique).
+- **Botão Steam:** congela o jogo enquanto o menu da Steam ou o menu rápido estiver aberto, como o botão PS.
+- **Menu do port no botão View**, com abas de gráficos, desempenho, controle e Extras, no estilo do jogo.
+- **Telas de salvar e carregar** refeitas no estilo do jogo, com as letras A e B do Deck.
+- **16:10:** a resolução da tela do Deck (1280x800) e os vídeos cortados para 16:10.
+- **Artes da biblioteca da Steam:** capa, banner, fundo, logo e ícone do Steamdeck Version.
+
 ## Requisitos
 
 - Steam Deck (testado no SteamOS 3.8).

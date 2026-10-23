@@ -99,6 +99,8 @@ case ${LANG:-}${LC_ALL:-} in pt*) export TLG_UI_LANG=pt_BR ;; *) export TLG_UI_L
 # Menu do port e tela de abertura: fontes livres (OFL) e o logo Steamdeck Version.
 export TLG_MENU_FONT=$app/instalador/fontes/Barlow-Medium.ttf TLG_MENU_FONT_BOLD=$app/instalador/fontes/ISSDeckStencil.ttf
 export TLG_LOADING_ART=$app/arte/delsin-steamdeck.png TLG_LOADING_LOGO=$app/arte/logo-vertical.png
+# Texturas trocadas pelo port: o Deck no lugar do controle do PS4 (minigame do spray e tela de controles).
+export TLG_TEXTURE_REPLACE_DIR=$app/deck/texturas
 export TLG_RESTART_COMMAND="bash $app/rodar.sh"
 setsid python3 "$app/deck/fixar-threads.py" "tlg:DrawRec=6;shadPS4:GpuComm=4;*=0-3,5,7" \
     </dev/null >"$app/logs/fixar-threads.log" 2>&1 &
