@@ -255,7 +255,11 @@ class Instalacao(threading.Thread):
                 if self.update:
                     self._pkgx(2, self.update, jogo)  # a 1.07 por cima da 1.00
                 self._avanca(2, 1.0)
-            self._avanca(3, 0.5)
+            self._avanca(3, 0.2)
+            # Icones de botao do Deck no jogo, gerados dos pacotes de texto do proprio jogo (deck/botoes_deck.py).
+            subprocess.run(["python3", str(APPDIR / "deck" / "botoes_deck.py"), str(jogo), str(APPDIR / "user" / "mods")],
+                           check=False)
+            self._avanca(3, 0.8)
             c = ler_config()
             c.update({"versao": (PACOTE / "VERSAO").read_text().strip() if (PACOTE / "VERSAO").exists() else "",
                       "port": str(port), "jogo": str(jogo), "atualizar": c.get("atualizar", True)})

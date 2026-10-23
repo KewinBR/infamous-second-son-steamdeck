@@ -75,6 +75,8 @@ echo "qualidade: $GERAR_EXTRA"
 if grep -qE '"resolucao": (1200|1000|800|600)[,}]' <<< "$GERAR_EXTRA"; then export TLG_VIDEO_CROP_1610=1; fi
 python3 "$app/deck/gerar.py" "$pasta"
 cp -f "$pasta/inFAMOUS.xml" "$udir/mods/steamdeck-inFAMOUS.xml"
+# Icones de botao do Deck (A, B, X, Y, MENU, PAD), gerados uma vez dos pacotes de texto do proprio jogo.
+[[ -d $udir/mods/steamdeck-botoes ]] || python3 "$app/deck/botoes_deck.py" "$jogo" "$udir/mods"
 
 # Controle: no Modo de Jogo a Steam entrega um controle virtual (sem giroscopio nem botoes de tras); o jogo le o
 # do Deck direto.

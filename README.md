@@ -57,13 +57,15 @@ R5) and what each one does.
 
 ### Deck buttons in the game
 
-The game's button icons (hints, menus, tutorials) replaced with the Deck's: A, B, X, Y, Menu and View instead of
-cross, circle, square, triangle, Options and touchpad, in the same style as the original icons.
+The game's button icons (hints, menus, tutorials) replaced with the Deck's: A, B, X, Y, MENU and PAD (the trackpads)
+instead of cross, circle, square, triangle, Options and touchpad, in the same style as the original icons and with
+the game's own font.
 
 <p align="center"><img src="docs/img/deck/botoes-deck.jpg" width="640" alt="Steam Deck button icons"></p>
 
-Not in the installer yet: the generator needs an image library SteamOS does not have, and it is being adapted to
-run on the Deck itself, from your game's files.
+The installer generates these icons on the Deck itself, from your game's files, in all 15 languages (about 20
+seconds; nothing from the game ships in the package). The generator is plain Python with no dependencies:
+[deck/botoes_deck.py](deck/botoes_deck.py).
 
 ### Startup screen
 

@@ -56,13 +56,14 @@ cada um faz.
 
 ### Botões do Deck no jogo
 
-Os ícones de botão do jogo (dicas, menus, tutoriais) trocados pelos do Deck: A, B, X, Y, Menu e View no lugar de
-cruz, círculo, quadrado, triângulo, Options e touchpad, no mesmo estilo dos ícones originais.
+Os ícones de botão do jogo (dicas, menus, tutoriais) trocados pelos do Deck: A, B, X, Y, MENU e PAD (os trackpads)
+no lugar de cruz, círculo, quadrado, triângulo, Options e touchpad, no mesmo estilo dos ícones originais e com a
+fonte do próprio jogo.
 
 <p align="center"><img src="docs/img/deck/botoes-deck.jpg" width="640" alt="Ícones de botão do Steam Deck"></p>
 
-Ainda não entram pelo instalador: o gerador precisa de uma biblioteca de imagens que o SteamOS não tem e está sendo
-adaptado para rodar no próprio Deck, a partir dos arquivos do seu jogo.
+O instalador gera esses ícones no próprio Deck, a partir dos arquivos do seu jogo, nos 15 idiomas (uns 20 segundos;
+nada do jogo vem no pacote). O gerador é Python puro, sem dependências: [deck/botoes_deck.py](deck/botoes_deck.py).
 
 ### Tela de abertura
 
