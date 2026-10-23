@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Instalar inFAMOUS Second Son (Steamdeck Version)
+Name[en]=Install inFAMOUS Second Son (Steamdeck Version)
+Comment=Instalador do port nativo para Steam Deck
+Exec=bash -c "curl -fsSL https://github.com/KewinBR/infamous-second-son-steamdeck/releases/latest/download/instalar.sh | bash"
+Icon=applications-games
+Terminal=false
+Categories=Game;

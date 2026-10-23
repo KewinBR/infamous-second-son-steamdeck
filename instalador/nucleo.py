@@ -21,7 +21,9 @@ APP = "infamous-ss-deck"
 TITULO = "CUSA00004"
 CONFIG = Path.home() / ".config" / APP / "config.json"
 AQUI = Path(__file__).resolve().parent
-PKGX = Path(os.environ.get("ISS_PKGX", AQUI / "bin" / "pkgx"))
+PACOTE = AQUI.parent  # a raiz do pacote da release (VERSAO, rodar.sh, deck/, bin/pkgx, port.tar.gz)
+PKGX = Path(os.environ.get("ISS_PKGX", PACOTE / "bin" / "pkgx"))
+APPDIR = Path.home() / ".local" / "share" / APP  # iniciador, scripts, user/ (saves, shaders) e logs
 ESPACO_JOGO = 32 * 1024 ** 3  # jogo extraido com a atualizacao (~31 GB) e folga
 
 
@@ -154,6 +156,29 @@ def gravar_config(c: dict) -> None:
     CONFIG.write_text(json.dumps(c, indent=2, ensure_ascii=False))
 
 
+def instalar_app() -> None:
+    """Copia o iniciador, os scripts, as artes e o instalador (usado nas atualizacoes) pro APPDIR. user/ e logs/
+    (saves, cache de shaders, opcoes) ficam como estao."""
+    APPDIR.mkdir(parents=True, exist_ok=True)
+    for item in PACOTE.iterdir():
+        if item.name in ("port.tar.gz", "user", "logs"):
+            continue
+        alvo = APPDIR / item.name
+        if alvo.resolve() == item.resolve():
+            continue
+        if alvo.is_dir():
+            shutil.rmtree(alvo)
+        elif alvo.exists():
+            alvo.unlink()
+        if item.is_dir():
+            shutil.copytree(item, alvo)
+        else:
+            shutil.copy2(item, alvo)
+    for sh in ("iniciar.sh", "rodar.sh", "bin/pkgx"):
+        if (APPDIR / sh).exists():
+            (APPDIR / sh).chmod(0o755)
+
+
 class Instalacao(threading.Thread):
     """Etapas: 0 port, 1 jogo base, 2 atualizacao, 3 preparar (fontes do menu, opcoes), 4 atalho na Steam."""
 
@@ -201,10 +226,12 @@ class Instalacao(threading.Thread):
             novo = self.raiz / "port.novo"
             shutil.rmtree(novo, ignore_errors=True)
             novo.mkdir()
-            subprocess.run(["tar", "-xzf", str(self.port_pacote), "-C", str(novo)], check=True)
+            subprocess.run(["tar", "-xzf", str(self.port_pacote), "-C", str(novo), "--strip-components=1"],
+                           check=True)
             if port.exists():
                 shutil.rmtree(port)
             novo.rename(port)
+            instalar_app()
             self._avanca(0, 1.0)
             jogo = self.raiz / "jogo"
             if self.pasta_jogo:  # pasta ja extraida: so aponta pra ela
@@ -218,7 +245,7 @@ class Instalacao(threading.Thread):
                 self._avanca(2, 1.0)
             self._avanca(3, 0.5)
             c = ler_config()
-            c.update({"versao": (port / "VERSAO").read_text().strip() if (port / "VERSAO").exists() else "",
+            c.update({"versao": (PACOTE / "VERSAO").read_text().strip() if (PACOTE / "VERSAO").exists() else "",
                       "port": str(port), "jogo": str(jogo), "atualizar": c.get("atualizar", True)})
             gravar_config(c)
             self._avanca(3, 1.0)
