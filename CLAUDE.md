@@ -39,9 +39,10 @@ local `G:\Meu Drive\CLIENTES\_Dev\Steamdeck\infamous\grafites-easter-egg\grafite
    brasileiros.
 4. **Opcional no menu do port:** Extras > "Easter Eggs", liga e desliga.
 5. **Surpresa:** o README cita a opção, mas **nunca mostra as imagens modificadas** nem lista o que muda.
-6. **Nada do jogo no repo** (regra 1): as artes modificadas derivam das texturas do jogo, então o pacote leva só o
-   que é nosso (os recortes novos) e o instalador monta as texturas a partir do jogo da pessoa, como já faz com os
-   ícones de botão. Kewin aprova a primeira arte antes das outras.
+6. **Nada do jogo no repo** (regra 1): `deck/easter-eggs/<hash>.tlgpatch` leva só os blocos BC3 redesenhados
+   (`ferramentas/tlgpatch.py`); o port desfaz o tiling da textura do próprio jogo e troca esses blocos na hora de
+   subir para a GPU (`TLG_TEXTURE_EASTER_DIR`, só com a opção ligada). Nome do arquivo = hash, para não entregar
+   a surpresa. Kewin aprovou a primeira arte (Reggie) em 2026-10-23.
 
 ## Estrutura
 

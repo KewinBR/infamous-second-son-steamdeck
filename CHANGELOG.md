@@ -12,3 +12,5 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões e
   Python puro (15 idiomas em ~20 s).
 - Texturas do Deck: minigame do spray (chacoalhar, virar) e tela de controles com os botoes de tras.
 - Atalho na Steam com capa, banner, fundo, logo e icone; iniciador com atualizacao automatica.
+- Extras > Easter Eggs no menu do port (desligado por padrao). Os arquivos levam so os blocos de textura
+  redesenhados; o resto vem do jogo instalado (`ferramentas/tlgpatch.py`).

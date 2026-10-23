@@ -82,6 +82,11 @@ continua pausando). A tela fica coberta com a arte do Delsin até o jogo voltar,
 <img src="docs/img/deck/pular-video-cobertura.jpg" width="420" alt="Pulando a cena">
 </p>
 
+### Easter Eggs
+
+Vem desligado. Ligue em Extras no menu do port e preste atenção nos muros que você pintar. Não vamos contar mais
+nada: é surpresa.
+
 ### E mais
 
 - **Giroscópio:** a Steam desliga o giroscópio do controle do Deck e entrega um controle virtual ao jogo; o port lê o

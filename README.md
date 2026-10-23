@@ -84,6 +84,11 @@ still pauses). The screen stays covered with the Delsin art until the game is ba
 <img src="docs/img/deck/pular-video-cobertura.jpg" width="420" alt="Skipping the scene">
 </p>
 
+### Easter Eggs
+
+Off by default. Turn it on in Extras in the port menu and keep an eye on the walls you paint. We will not say
+more: it is a surprise.
+
 ### And more
 
 - **Gyro:** Steam turns off the Deck controller's gyro and hands the game a virtual controller; the port reads the

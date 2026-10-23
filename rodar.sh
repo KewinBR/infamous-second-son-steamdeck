@@ -103,6 +103,8 @@ export TLG_MENU_FONT=$app/instalador/fontes/Barlow-Medium.ttf TLG_MENU_FONT_BOLD
 export TLG_LOADING_ART=$app/arte/delsin-steamdeck.png TLG_LOADING_LOGO=$app/arte/logo-vertical.png
 # Texturas trocadas pelo port: o Deck no lugar do controle do PS4 (minigame do spray e tela de controles).
 export TLG_TEXTURE_REPLACE_DIR=$app/deck/texturas
+# Extras > Easter Eggs (desligado por padrao): so os blocos redesenhados; o resto vem do jogo instalado.
+export TLG_TEXTURE_EASTER_DIR=$app/deck/easter-eggs
 export TLG_RESTART_COMMAND="bash $app/rodar.sh"
 setsid python3 "$app/deck/fixar-threads.py" "tlg:DrawRec=6;shadPS4:GpuComm=4;*=0-3,5,7" \
     </dev/null >"$app/logs/fixar-threads.log" 2>&1 &
