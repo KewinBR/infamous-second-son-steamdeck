@@ -26,6 +26,23 @@ iniciador com atualização automática, README em português e inglês, crédit
 7. **Releases:** tag SemVer `vX.Y.Z` + entrada no `CHANGELOG.md` + pacote `infamous-ss-deck-vX.Y.Z.tar.gz` (port +
    instalador + pkgx) anexado à release. O iniciador busca a última release antes de abrir o jogo.
 
+## Easter eggs (grafites do minigame de spray)
+
+Pedido do Kewin em 2026-10-23: trocas bem-humoradas nos grafites do minigame (as respostas dele estão na página
+local `G:\Meu Drive\CLIENTES\_Dev\Steamdeck\infamous\grafites-easter-egg\grafites.html`).
+
+1. **Cor de destaque:** grafite de karma mau usa detalhes em destaque **vermelhos**; de karma bom, **azuis**. O do
+   Reggie (sem karma) segue o original.
+2. **Mesmo estilo e mesma posição:** estêncil e spray como o original, nada muda de lugar (as camadas de tinta e os
+   moldes do minigame têm que bater com a arte final). Só a parte trocada é refeita; o resto fica idêntico.
+3. **Temas** quando a ideia precisar de troca: crítica à exclusividade nos games, o reinado das IAs e memes
+   brasileiros.
+4. **Opcional no menu do port:** Extras > "Easter Eggs", liga e desliga.
+5. **Surpresa:** o README cita a opção, mas **nunca mostra as imagens modificadas** nem lista o que muda.
+6. **Nada do jogo no repo** (regra 1): as artes modificadas derivam das texturas do jogo, então o pacote leva só o
+   que é nosso (os recortes novos) e o instalador monta as texturas a partir do jogo da pessoa, como já faz com os
+   ícones de botão. Kewin aprova a primeira arte antes das outras.
+
 ## Estrutura
 
 | Pasta | O quê |
