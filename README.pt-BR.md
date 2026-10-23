@@ -155,5 +155,6 @@ O diário completo fica em [docs/aprendizados.md](docs/aprendizados.md). Os prin
 
 ## Licença
 
-GPL-2.0, como o iss_pc ([LICENSE](LICENSE)). As fontes do instalador seguem a SIL OFL 1.1
+GPL-2.0, como o iss_pc ([LICENSE](LICENSE)). O código do port, com todas as mudanças feitas para o Deck, está em
+[KewinBR/iss_pc-steamdeck](https://github.com/KewinBR/iss_pc-steamdeck) (ramo `steam-deck`). As fontes do instalador seguem a SIL OFL 1.1
 (`instalador/fontes/`).

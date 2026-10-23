@@ -155,4 +155,5 @@ The full journal is in [docs/aprendizados.md](docs/aprendizados.md) (Portuguese)
 
 ## License
 
-GPL-2.0, like iss_pc ([LICENSE](LICENSE)). The installer fonts are under the SIL OFL 1.1 (`instalador/fontes/`).
+GPL-2.0, like iss_pc ([LICENSE](LICENSE)). The port's source code, with every change made for the Deck, is in
+[KewinBR/iss_pc-steamdeck](https://github.com/KewinBR/iss_pc-steamdeck) (branch `steam-deck`). The installer fonts are under the SIL OFL 1.1 (`instalador/fontes/`).

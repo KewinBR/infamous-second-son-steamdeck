@@ -2,7 +2,8 @@
 
 Repositório público (quando o Kewin liberar) do port nativo do inFAMOUS Second Son para Steam Deck: instalador,
 iniciador com atualização automática, README em português e inglês, créditos e aprendizados. O código do port
-(GPL-2.0) fica no ramo `steam-deck-v2` do fork do iss_pc; o trabalho de pesquisa e o diário ficam no repo privado
+(GPL-2.0) fica no ramo `steam-deck-v2-up` do iss_pc na VPS, espelhado em `KewinBR/iss_pc-steamdeck` (ramo
+`steam-deck`, privado até o lançamento); o trabalho de pesquisa e o diário ficam no repo privado
 `steam-deck` (`projetos/infamous/`).
 
 ## Regras
