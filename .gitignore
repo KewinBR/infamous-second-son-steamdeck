@@ -1,0 +1,48 @@
+# Base pra todo repo novo (copiar como .gitignore e somar o específico da stack)
+
+# Segredos: NUNCA versionar. Valores ficam no cofre do Drive (ver dev-base/_docs/credenciais.md)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*-credenciais.md
+mcp-config.md
+
+# Dependências e build
+node_modules/
+vendor/
+dist/
+build/
+.next/
+.netlify/
+.vercel/
+__pycache__/
+*.pyc
+
+# Versões antigas e zips gerados (o git já é o histórico)
+Versions/
+_Versions/
+*.zip
+
+# Ferramentas e sistema
+graphify-out/
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Nunca no git: arquivos do jogo, pkgs, saves, caches e a traducao privada
+*.pkg
+*.bin
+*.elf
+*.sfo
+*.psarc
+*.bsf
+CUSA*/
+savedata/
+traducao*/
+__pycache__/
+dist/
+build/
