@@ -23,9 +23,11 @@ baixado: o instalador só usa os `.pkg` que você já tem.
 - Giroscópio do Deck no minigame de grafite, botão Steam pausa o jogo (como o botão PS), menu do port no botão View.
 - Telas de salvar e de carregamento no estilo do jogo, letras A/B do Deck.
 - Cache de shaders: cada shader é compilado uma vez só e guardado.
-- Pular vídeos (experimental, desligado de fábrica): no menu do port, aba Extras.
+- Pular vídeos (experimental, desligado de fábrica) e Easter Eggs (desligado de fábrica): no menu do port, aba Extras.
 - Atualização automática: antes de abrir o jogo, o atalho confere se saiu versão nova e atualiza sozinho. Saves,
   shaders e opções nunca são apagados.
+
+<p align="center"><img src="docs/img/deck/jogando-no-deck.jpg" width="720" alt="O jogo rodando no Steam Deck"></p>
 
 ## Feito para o Steam Deck
 

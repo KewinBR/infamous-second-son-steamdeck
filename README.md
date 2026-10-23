@@ -24,9 +24,11 @@ the installer only uses the `.pkg` files you already have.
   View button.
 - Save and loading screens in the game's style, Deck A/B button glyphs.
 - Shader cache: each shader is compiled only once and kept.
-- Skip videos (experimental, off by default): in the port menu, Extras tab.
+- Skip videos (experimental, off by default) and Easter Eggs (off by default): in the port menu, Extras tab.
 - Automatic updates: before starting the game, the shortcut checks for a new version and updates by itself. Saves,
   shaders and settings are never deleted.
+
+<p align="center"><img src="docs/img/deck/jogando-no-deck.jpg" width="720" alt="The game running on the Steam Deck"></p>
 
 ## Made for the Steam Deck
 
