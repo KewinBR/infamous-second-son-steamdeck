@@ -16,9 +16,9 @@ TEXTOS = {
     "instalar": ("INSTALAR", "INSTALL"),
     "outro_idioma": ("ENGLISH", "PORTUGUÊS"),
     "inicio_texto": ("Instalador do port nativo para Steam Deck.\nVocê precisa da sua própria cópia do jogo de PS4 "
-                     "(CUSA00004, versão 1.07). Nada do jogo é baixado.",
+                     "(CUSA00004 ou CUSA00223, versão 1.07). Nada do jogo é baixado.",
                      "Installer for the native Steam Deck port.\nYou need your own copy of the PS4 game "
-                     "(CUSA00004, version 1.07). Nothing from the game is downloaded."),
+                     "(CUSA00004 or CUSA00223, version 1.07). Nothing from the game is downloaded."),
     "creditos_por": ("PORT PARA STEAM DECK POR", "STEAM DECK PORT BY"),
     "creditos_base": ("sobre o iss_pc de HayatoG e o shadPS4", "built on HayatoG's iss_pc and shadPS4"),
     "jogo_titulo": ("ONDE ESTÁ O JOGO?", "WHERE IS THE GAME?"),

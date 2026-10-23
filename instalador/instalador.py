@@ -131,7 +131,7 @@ class App:
     def creditos(self):
         y = H - 64 - 58
         self.texto(56, y, T("creditos_por"), "med15", CI)
-        t = self.texto(56, y + 16, "KEWIN LIMA", "tit30", AM)
+        t = self.texto(56, y + 16, "Kewin Lima", "tit30", AM)
         self.texto(self.cv.bbox(t)[2] + 14, y + 27, T("creditos_base"), "reg16", CI)
 
     def focavel(self, desenhar, acao, foco_inicial=False):
@@ -441,6 +441,11 @@ def prints(app: App, pasta: Path):
 
 
 if __name__ == "__main__":
+    if not DEMO:  # registro pra issues (~/.config/infamous-ss-deck/instalador.log)
+        nucleo.CONFIG.parent.mkdir(parents=True, exist_ok=True)
+        sys.stdout = sys.stderr = open(nucleo.CONFIG.parent / "instalador.log", "a", buffering=1, encoding="utf-8")
+        print(time.strftime("== %Y-%m-%d %H:%M:%S"), "instalador", (nucleo.PACOTE / "VERSAO").read_text().strip()
+              if (nucleo.PACOTE / "VERSAO").exists() else "")
     T.lang = os.environ.get("IDIOMA") or idioma_inicial()
     app = App()
     if os.environ.get("PRINTS"):

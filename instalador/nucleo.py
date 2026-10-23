@@ -18,7 +18,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 APP = "infamous-ss-deck"
-TITULO = "CUSA00004"
+TITULOS = ("CUSA00004", "CUSA00223")  # Europa e EUA: o eboot 1.07 e o mesmo (ponto de entrada 0x61dfd0)
 CONFIG = Path.home() / ".config" / APP / "config.json"
 AQUI = Path(__file__).resolve().parent
 PACOTE = AQUI.parent  # a raiz do pacote da release (VERSAO, rodar.sh, deck/, bin/pkgx, port.tar.gz)
@@ -93,7 +93,7 @@ def procurar_pkgs(lugares: list[Path] | None = None, profundidade: int = 4) -> l
     pacotes = list(achados.values())
     for p in pacotes:
         classificar(p)
-    return [p for p in pacotes if p.titulo == TITULO]
+    return [p for p in pacotes if p.titulo in TITULOS]
 
 
 def classificar(p: Pacote) -> None:
@@ -254,5 +254,7 @@ class Instalacao(threading.Thread):
             with self.p._trava:
                 self.p.pronto = True
         except Exception as e:  # a tela mostra o erro e o log
+            import traceback
+            traceback.print_exc()
             with self.p._trava:
                 self.p.erro = str(e)
