@@ -44,8 +44,10 @@ só conta com várias rodadas.
 - Pilhas de chamada da thread do jogo (o código recompilado mantém o ponteiro de quadro, então o `perf -g` funciona)
   mostraram 41% do tempo numa espera ativa: o laço principal espera um rótulo que a GPU escreve no fim do trabalho e
   só segue quando a fila inteira esvazia. CPU e GPU se revezam em vez de trabalhar juntas.
-- Um patch de 18 bytes faz o jogo esperar só até um quadro atrás: de 40 para 45 FPS de média nas mesmas rodadas.
-  Uma segunda espera, na função que envia o quadro, trava o carregamento se for relaxada. O patch está em teste.
+- Um patch de 18 bytes faz o jogo esperar só até um quadro atrás: de 40 para 45 FPS de média nas mesmas rodadas,
+  mas o neon, a fumaça e as explosões somem (o jogo lê a simulação de partículas que a GPU calcula antes dela ficar
+  pronta) e até o trajeto gravado muda de caminho. Uma segunda espera, na função que envia o quadro, trava o
+  carregamento se for relaxada. Descartado: a espera existe por um motivo.
 
 ## 5. Vídeos
 

@@ -142,8 +142,9 @@ O diário completo fica em [docs/aprendizados.md](docs/aprendizados.md). Os prin
   caiu de 6 para 3,5 GB e a corrida de neon foi de 33 para 41 FPS.
 - **Coletor de texturas:** medindo o uso total do Deck (que inclui a memória compartilhada), ele apagava texturas
   todo quadro. Medindo só as texturas, as travadas sumiram.
-- **Onde vai o quadro:** o jogo espera a GPU esvaziar a fila a cada quadro. Esperar um quadro a menos dá uns 4 FPS a
-  mais (em teste, ainda não liberado).
+- **Onde vai o quadro:** o jogo espera a GPU esvaziar a fila a cada quadro. Esperar um quadro a menos deu uns 4 FPS
+  a mais, mas o neon, a fumaça e as explosões sumiram: o jogo lê a simulação de partículas que a GPU calcula, e ela
+  ainda não estava pronta. Descartado.
 - **Shaders:** o jogo tem 10.374 shaders e 13 mil combinações de pipeline já vistas. Compilar tudo de antemão não
   funciona sem a lista de materiais do jogo; o cache guarda cada pipeline compilado e a abertura seguinte já os
   carrega.

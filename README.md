@@ -142,8 +142,9 @@ The full journal is in [docs/aprendizados.md](docs/aprendizados.md) (Portuguese)
   RAM from 6 to 3.5 GB and the neon race from 33 to 41 FPS.
 - **Texture collector:** measuring the Deck's total usage (which includes shared memory) made it delete textures
   every frame. Measuring only the textures removed the stutters.
-- **Where the frame goes:** the game waits for the GPU queue to drain every frame. Waiting one frame less gives about
-  4 FPS more (being tested, not released yet).
+- **Where the frame goes:** the game waits for the GPU queue to drain every frame. Waiting one frame less gave about
+  4 FPS more, but the neon, smoke and explosion effects vanished: the game reads the particle simulation the GPU
+  computes, and it was not ready yet. Dropped.
 - **Shaders:** the game has 10,374 shaders and 13 thousand pipeline combinations seen so far. Compiling everything
   up front does not work without the game's material list; the cache keeps every compiled pipeline and the next
   launch loads them.
