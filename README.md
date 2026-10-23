@@ -126,7 +126,7 @@ This work exists because of these projects (all GPL-2.0, like this one):
   TOXIC-KID, 0xDeftones), [ShadowOfTheColossus-PC](https://github.com/AjncSystem/ShadowOfTheColossus-PC) (AjncSystem,
   with parts of luizgustavs' Pink-shadPS4).
 - The `.pkg` extractor (`pkgx`) is the extraction code of [shadPS4](https://github.com/shadps4-emu/shadPS4) 0.6.0 as a
-  command line tool, with fixes for large files.
+  command line tool, with fixes for large files (source in [ferramentas/pkgx](ferramentas/pkgx)).
 - Installer fonts: Big Shoulders Stencil (The Big Shoulders Project Authors) and Barlow (Jeremy Tribby), SIL OFL 1.1.
 - Art of Delsin with the Steam Deck and of the neon Deck: made with Google Flow for this project.
 

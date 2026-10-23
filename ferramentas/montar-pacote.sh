@@ -21,5 +21,17 @@ chmod +x "$pkg/bin/pkgx" "$pkg/rodar.sh" "$pkg/iniciar.sh" "$pkg/instalar.sh"
 if tar tzf "$pkg/port.tar.gz" | grep -qiE '\.(pkg|psarc|bsf|sfo)$|eboot\.(bin|elf)$|/content\.bin$'; then
     echo "ERRO: arquivo do jogo no tarball do port"; exit 1
 fi
-tar -C "$dist" -czf "$dist/infamous-ss-deck-$versao.tar.gz" infamous-ss-deck
+# tar pelo Python: no Windows o tar perde o bit de execucao; aqui os executaveis saem 755 e o resto 644.
+python - "$dist" "$versao" <<'PY'
+import os, sys, tarfile
+dist, versao = sys.argv[1], sys.argv[2]
+exe = {"bin/pkgx", "rodar.sh", "iniciar.sh", "instalar.sh"}
+def ajusta(ti):
+    rel = ti.name.split("/", 1)[1] if "/" in ti.name else ""
+    ti.mode = 0o755 if ti.isdir() or rel in exe else 0o644
+    ti.uid = ti.gid = 0; ti.uname = ti.gname = ""
+    return ti
+with tarfile.open(os.path.join(dist, f"infamous-ss-deck-{versao}.tar.gz"), "w:gz") as t:
+    t.add(os.path.join(dist, "infamous-ss-deck"), "infamous-ss-deck", filter=ajusta)
+PY
 ls -la "$dist/infamous-ss-deck-$versao.tar.gz"

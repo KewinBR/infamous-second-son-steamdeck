@@ -89,7 +89,9 @@ def procurar_pkgs(lugares: list[Path] | None = None, profundidade: int = 4) -> l
                     except OSError:
                         continue
                     if t > 1024 ** 3:
-                        achados[p.resolve()] = Pacote(p, t)
+                        real = p.resolve()
+                        if real not in achados or p.is_symlink() is False:  # o nome do arquivo, nao o do atalho
+                            achados[real] = Pacote(real if p.is_symlink() else p, t)
     pacotes = list(achados.values())
     for p in pacotes:
         classificar(p)
@@ -111,6 +113,10 @@ def classificar(p: Pacote) -> None:
     flags = ""
     if PKGX.exists():
         try:
+            PKGX.chmod(0o755)
+        except OSError:
+            pass
+        try:
             proc = subprocess.Popen([str(PKGX), "-l", str(p.caminho), "/tmp/pkgx-l"], stdout=subprocess.PIPE,
                                     stderr=subprocess.DEVNULL, text=True)
             for linha in proc.stdout:
@@ -120,27 +126,33 @@ def classificar(p: Pacote) -> None:
             proc.kill()
         except OSError:
             pass
-    if "GP" in flags:
+    if "PATCH" in flags:  # FIRST_PATCH, CUMULATIVE_PATCH...: a atualizacao (o jogo base so tem GD_AC)
         p.tipo = "update"
-    elif "GD" in flags:
+    elif flags:
         p.tipo = "base"
     else:  # sem pkgx: pelo tamanho (o jogo tem 24 GB, a atualizacao 3,9 GB)
         p.tipo = "base" if p.tamanho > 10 * 1024 ** 3 else "update"
 
 
 def locais() -> list[Local]:
+    """O SSD (a pasta pessoal) e cada cartao/disco montado em /run/media (so pontos de montagem de verdade)."""
     res = [Local("ssd", Path.home(), shutil.disk_usage(Path.home()).free, False)]
-    media = Path("/run/media")
-    if media.is_dir():
-        for usuario in media.iterdir():
-            if not usuario.is_dir():
-                continue
-            for m in usuario.iterdir():
-                try:
-                    if m.is_dir() and os.access(m, os.W_OK):
-                        res.append(Local(m.name, m, shutil.disk_usage(m).free, True))
-                except OSError:
-                    pass
+    vistos = set()
+    try:
+        with open("/proc/mounts") as f:
+            pontos = [linha.split()[1].replace(r"\040", " ") for linha in f]  # espaco escapado no /proc/mounts
+    except OSError:
+        pontos = []
+    for ponto in pontos:
+        m = Path(ponto)
+        if not ponto.startswith("/run/media/") or m in vistos:
+            continue
+        vistos.add(m)
+        try:
+            if os.access(m, os.W_OK):
+                res.append(Local(m.name, m, shutil.disk_usage(m).free, True))
+        except OSError:
+            pass
     return res
 
 
