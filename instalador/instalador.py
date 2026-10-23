@@ -338,8 +338,10 @@ class App:
         if self.tela != "instalando":
             return
         p = self.prog
-        if DEMO:  # 31% na etapa 1, como na previa aprovada
-            p.etapa, p.fracao, p.total = 1, 0.46, 0.31
+        if DEMO:  # 31% na etapa 1, como na previa aprovada (PROGRESSO_DEMO="etapa:fracao:total" muda, pro video)
+            d = os.environ.get("PROGRESSO_DEMO", "1:0.46:0.31").split(":")
+            p.etapa, p.fracao, p.total = int(d[0]), float(d[1]), float(d[2])
+            p.pronto = p.etapa >= 5
         for d in self.etapas_ids:
             self.cv.delete(d)
         ids = []
@@ -365,7 +367,7 @@ class App:
         info = f"{T('total')}: {int(p.total * 100)}%"
         dec = time.time() - getattr(self, "t0", time.time())
         if DEMO:
-            info += f"   •   {T('restam').format(18)}"
+            info += f"   •   {T('restam').format(max(1, round(18 * (1 - p.total) / 0.69)))}"
         elif p.total > 0.03 and dec > 20:
             info += f"   •   {T('restam').format(max(1, round(dec / p.total * (1 - p.total) / 60)))}"
         info += f"   •   {T('tomada')}"
@@ -375,7 +377,7 @@ class App:
             self.erro = p.erro
             self.mostrar("erro")
             return
-        if p.pronto:
+        if p.pronto and not DEMO:
             self.mostrar("pronto")
             return
         self.root.after(120, self.atualizar_progresso)
@@ -419,13 +421,14 @@ def prints(app: App, pasta: Path):
     pasta.mkdir(parents=True, exist_ok=True)
     app.root.attributes("-topmost", True)
     app.root.lift()
-    seq = ["inicio", "jogo", "local", "instalando", "pronto", "erro"]
+    seq = os.environ.get("TELAS", "inicio,jogo,local,instalando,pronto,erro").split(",")
 
     def tirar(i=0):
         if i:
             app.root.update()
             x, y = app.cv.winfo_rootx(), app.cv.winfo_rooty()
-            ImageGrab.grab((x, y, x + W, y + H)).save(pasta / f"{i}-{seq[i - 1]}-{T.lang}.png")
+            nome = os.environ.get("NOME_PRINT", f"{i}-{seq[i - 1]}")
+            ImageGrab.grab((x, y, x + W, y + H)).save(pasta / f"{nome}-{T.lang}.png")
         if i == len(seq):
             app.root.destroy()
             return
