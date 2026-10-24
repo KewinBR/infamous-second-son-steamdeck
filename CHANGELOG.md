@@ -2,6 +2,13 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.4] - 2026-10-24
+
+### Corrigido
+- O botão Steam ainda podia travar o Deck em sessões longas. A causa de verdade: os passes nativos do renderer
+  guardavam os buffers de comando de cada pico de cena pesada e nunca devolviam (chegava a ~3 GB de memória de vídeo).
+  Agora o que sobra acima do necessário volta pro sistema.
+
 ## [1.0.3] - 2026-10-24
 
 ### Corrigido
