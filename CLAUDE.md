@@ -25,6 +25,16 @@ iniciador com atualização automática, README em português e inglês, crédit
 6. **Publicar:** o repositório nasce privado. O Kewin vê o link privado e só ele libera o público.
 7. **Releases:** tag SemVer `vX.Y.Z` + entrada no `CHANGELOG.md` + pacote `infamous-ss-deck-vX.Y.Z.tar.gz` (port +
    instalador + pkgx) anexado à release. O iniciador busca a última release antes de abrir o jogo.
+8. **Opção do port = menu do botão View** (decidido pelo Kewin em 2026-10-24, depois que a aba Extras foi parar só
+   no menu avançado). O port tem dois menus em `port/gpu/shim/tlg_overlay.cpp`: o do botão View, no estilo do jogo
+   (`Build()`, abas Gráficos, Controle, Extras e Sobre), que é o que a pessoa usa; e o avançado, de desenvolvimento
+   (`ExtrasTab()` e vizinhas, aberto por "Menu avançado"). Toda opção nova que a pessoa deve ver entra no menu do
+   View (e também no avançado, se fizer sentido). Opção que pede salvar entra em `Snapshot`/`Changed()`, senão o
+   menu fecha sem gravar. Antes de dizer que está pronto: abrir o menu do View no Deck (sessão de teste) e mostrar
+   print da opção no lugar. Como, sem ninguém no controle: `TLG_PAD_FILE` com a palavra `view` aperta o View,
+   `TLG_MENU_TAB=n` abre o menu na aba n (0 Gráficos, 1 Controle, 2 Extras, 3 Sobre) e
+   `TLG_SHOT_OVERLAY=1 TLG_SHOT_EVERY_S=1` grava prints com o menu por cima (`*_hud_*.png` em `user/gpu-2`). O
+   `xdotool` não chega na janela dentro do gamescope e a captura do X sai preta.
 
 ## Easter eggs (grafites do minigame de spray)
 

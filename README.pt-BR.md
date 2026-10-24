@@ -89,6 +89,8 @@ continua pausando). A tela fica coberta com a arte do Delsin até o jogo voltar,
 Vem desligado. Ligue em Extras no menu do port e preste atenção nos muros que você pintar. Não vamos contar mais
 nada: é surpresa.
 
+<p align="center"><img src="docs/img/deck/menu-extras.jpg" width="640" alt="Aba Extras no menu do port (botão View)"></p>
+
 ### E mais
 
 - **Giroscópio:** a Steam desliga o giroscópio do controle do Deck e entrega um controle virtual ao jogo; o port lê o

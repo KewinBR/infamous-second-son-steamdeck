@@ -2,6 +2,11 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.1] - 2026-10-24
+
+### Corrigido
+- A aba Extras (Pular vídeos e Easter Eggs) agora aparece no menu do botão View; antes estava só no menu avançado.
+
 ## [1.0.0] - 2026-10-23
 
 ### Adicionado
