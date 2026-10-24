@@ -2,6 +2,12 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.3] - 2026-10-24
+
+### Corrigido
+- A proteção de memória da 1.0.2 apagava texturas em uso e o jogo engasgava nas batalhas. Agora ela só apaga texturas
+  paradas há uns 20 segundos, poucas de cada vez.
+
 ## [1.0.2] - 2026-10-24
 
 ### Corrigido
