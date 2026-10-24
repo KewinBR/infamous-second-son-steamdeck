@@ -39,8 +39,8 @@ TX = {
     "s2": ("Segure o botão de ligar e escolha Mudar para a Área de Trabalho.",
            "Hold the power button and choose Switch to Desktop."),
     "t3": ("BAIXE O INSTALADOR", "DOWNLOAD THE INSTALLER"),
-    "s3": ("No navegador, abra a página de releases do projeto e baixe Instalar inFAMOUS.desktop.",
-           "In the browser, open the project's releases page and download Instalar inFAMOUS.desktop."),
+    "s3": ("No navegador, abra a página de releases do projeto e baixe Instalar-inFAMOUS.desktop.",
+           "In the browser, open the project's releases page and download Instalar-inFAMOUS.desktop."),
     "t4": ("ABRA O ARQUIVO", "OPEN THE FILE"),
     "s4": ("Na pasta Downloads, toque duas vezes nele e confirme.",
            "In the Downloads folder, tap it twice and confirm."),
@@ -133,7 +133,7 @@ def tela_navegador(sel=False):
     d.text((60, 250), "v1.0.0", font=BOL(40), fill=(30, 30, 36))
     d.text((60, 306), "Latest", font=MED(20), fill=(40, 140, 60))
     d.text((60, 360), "Assets", font=BOL(26), fill=(30, 30, 36))
-    for i, (nome, tam) in enumerate((("Instalar inFAMOUS.desktop", "1 KB"), ("infamous-ss-deck-v1.0.0.tar.gz", "110 MB"),
+    for i, (nome, tam) in enumerate((("Instalar-inFAMOUS.desktop", "1 KB"), ("infamous-ss-deck-v1.0.0.tar.gz", "110 MB"),
                                       ("instalar.sh", "1 KB"))):
         y = 410 + i * 64
         d.rectangle([60, y, 1220, y + 58], outline=(215, 218, 224), fill=(232, 240, 255) if (sel and i == 0) else None)
@@ -146,7 +146,7 @@ def tela_downloads(dlg=False):
     img = tela_vazia()
     janela(img, t("f_down"))
     d = ImageDraw.Draw(img)
-    icone_arquivo(d, 120, 160, "Instalar inFAMOUS.desktop", "▶", destaque=True)
+    icone_arquivo(d, 120, 160, "Instalar-inFAMOUS.desktop", "▶", destaque=True)
     if dlg:
         d.rounded_rectangle([360, 300, 920, 540], 14, fill=(46, 48, 56), outline=(90, 94, 104), width=2)
         d.text((640, 360), t("dlg"), font=MED(30), fill=BR, anchor="mm")

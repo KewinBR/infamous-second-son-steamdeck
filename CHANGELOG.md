@@ -2,7 +2,7 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
-## [Não lançado]
+## [1.0.0] - 2026-10-23
 
 ### Adicionado
 - Instalador para o Modo Desktop do Steam Deck (toque e controle, português e inglês): acha os .pkg do jogo,

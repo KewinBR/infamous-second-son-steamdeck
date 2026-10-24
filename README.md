@@ -117,7 +117,7 @@ more: it is a surprise.
    you can use a USB drive, the SD card or Warpinator.
 2. On the Deck, hold the power button and choose **Switch to Desktop** (Desktop Mode).
 3. Open the browser, go to the [releases](https://github.com/KewinBR/infamous-second-son-steamdeck/releases/latest)
-   page and download the file **`Instalar inFAMOUS.desktop`**.
+   page and download the file **`Instalar-inFAMOUS.desktop`**.
 4. In the Downloads folder, tap it twice (if the system asks, choose **Continue/Execute**).
 5. The installer opens full screen. Use touch or the controller (D-pad, **A** confirms, **B** goes back):
    1. **Where is the game:** it finds the `.pkg` files by itself and checks the game and the update.
