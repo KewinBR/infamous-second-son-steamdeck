@@ -69,6 +69,9 @@ TEXTOS = {
     "atualizando": ("ATUALIZANDO", "UPDATING"),
     "atualizando_texto": ("Baixando a versão {} do port. O jogo abre logo em seguida.",
                           "Downloading version {} of the port. The game starts right after."),
+    "o_que_mudou": ("O QUE MUDOU", "WHAT'S NEW"),
+    "notas_completas": ("Notas completas: github.com/KewinBR/infamous-second-son-steamdeck",
+                        "Full notes: github.com/KewinBR/infamous-second-son-steamdeck"),
 }
 
 

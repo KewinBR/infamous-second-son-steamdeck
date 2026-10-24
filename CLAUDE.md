@@ -24,7 +24,10 @@ iniciador com atualização automática, README em português e inglês, crédit
    `README.md` e `README.pt-BR.md`). Sem travessão e sem emoji.
 6. **Publicar:** o repositório nasce privado. O Kewin vê o link privado e só ele libera o público.
 7. **Releases:** tag SemVer `vX.Y.Z` + entrada no `CHANGELOG.md` + pacote `infamous-ss-deck-vX.Y.Z.tar.gz` (port +
-   instalador + pkgx) anexado à release. O iniciador busca a última release antes de abrir o jogo.
+   instalador + pkgx) anexado à release. O iniciador busca a última release antes de abrir o jogo. **Notas da
+   release** (pedido do Kewin em 2026-10-24): sempre com um bloco `**Português**` e um `**English**`, cada mudança numa
+   linha começando com `- `. A tela de atualização mostra esses itens ("O que mudou") de todas as versões mais novas
+   que a instalada, no idioma da pessoa (`notas_novas` no `iniciador.py`); o CHANGELOG é atualizado junto.
 8. **Opção do port = menu do botão View** (decidido pelo Kewin em 2026-10-24, depois que a aba Extras foi parar só
    no menu avançado). O port tem dois menus em `port/gpu/shim/tlg_overlay.cpp`: o do botão View, no estilo do jogo
    (`Build()`, abas Gráficos, Controle, Extras e Sobre), que é o que a pessoa usa; e o avançado, de desenvolvimento

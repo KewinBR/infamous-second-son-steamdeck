@@ -2,6 +2,11 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.5] - 2026-10-24
+
+### Adicionado
+- A tela de atualização mostra o que mudou desde a versão instalada, no idioma do Deck.
+
 ## [1.0.4] - 2026-10-24
 
 ### Corrigido
