@@ -2,6 +2,13 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [1.0.2] - 2026-10-24
+
+### Corrigido
+- O botão Steam podia travar o Deck depois de um bom tempo de jogo: a memória de vídeo (que no Deck sai da RAM)
+  enchia e o menu da Steam não conseguia abrir. Agora o port libera texturas fora de uso quando a memória livre do
+  Deck cai abaixo de 1,5 GB.
+
 ## [1.0.1] - 2026-10-24
 
 ### Corrigido
